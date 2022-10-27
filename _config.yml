@@ -21,11 +21,13 @@
 title: Blog
 email: I get emails on hotmail.com server, and access them with my user nberani
 description: >- # this means to ignore newlines until "baseurl:"
-  What is a software developer to do if not to check out tools? Just playing with Jekyll and GitHub pages.
+What is a software developer to do if not to check out tools? Just playing with Jekyll and GitHub pages.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Ngadhnjim
+linkedin_username: ngadhnjim-berani-ab89761b
 github_username:  bibiki
+
 
 # Build settings
 theme: minima

@@ -13,7 +13,7 @@ In the course of this article I will introduce fragments of code. If you feel in
 
 Let us start by playing a game: I give you a number and in return, you give me two numbers. Let us name the number I give you "data" and the two numbers that you give me "nonce" and "hash". Also, there is a property that binds these three numbers together; I am arbitrarily chosing the property to be this:
 
-The sum of data and nonce is congruent 0 modulo 17.
+The sum of data and nonce is divisible by 17. Another way to say the same is: the sum of data and nonce is congruent 0 modulo 17.
 
 So, If I give you 2, you can respond with 15 and 17. 32 and 34 will work also as 2 + 32 = 34, and 34 is congruent 0 modulo 17. So, for data = 2, your nonce is 32 and your hash is 34.
 

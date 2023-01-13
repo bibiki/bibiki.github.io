@@ -96,15 +96,15 @@ That gives you a visual clue of how the two endian representations differ.
 Now that that is clear, let me point out that header_hex in the Python code above is the concatenation of hexadecimal values in little endian representation of the following block specific data:
 
 ```
-version \
-previous_blocks_hash \
-hash_merkle_root \
-bits \
-time \
+version
+previous_blocks_hash
+hash_merkle_root
+bits
+time
 nonce 
 ```
 
-Above, I retrieved the genesis block information. Here is the same information as well as the command that retrieves it:
+Above, I retrieved the genesis block's information. Here is the same information as well as the command that retrieves it:
 
 ```
 bitcoin-cli getblock 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
@@ -137,18 +137,18 @@ bitcoin-cli getblock 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8
 So, for genesis block, we have:
 
 ```
-version = 1 \
-previous_blocks_hash = 0 \
-hash_merkle_root = 4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b \
-bits = 1d00ffff \
-time = 1231006505 \
+version = 1
+previous_blocks_hash = 0
+hash_merkle_root = 4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b
+bits = 1d00ffff
+time = 1231006505
 nonce = 2083236893
 ```
 
 Other than nonce and time, the data is in hexadecimal base. Let us fix that for nonce and time.
 
 ```
-nonce = 7c2bac1d \
+nonce = 7c2bac1d
 time = 495fab29
 ```
 
@@ -169,11 +169,11 @@ version = "00000001"
 So, here is our data in hexadecimal, big endian representation.
 
 ```
-version = "00000001" \
-previous_blocks_hash = "0000000000000000000000000000000000000000000000000000000000000000" \
-hash_merkle_root = 4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b \
-bits = 1d00ffff \
-time = 495fab29 \
+version = "00000001"
+previous_blocks_hash = "0000000000000000000000000000000000000000000000000000000000000000"
+hash_merkle_root = 4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b
+bits = 1d00ffff
+time = 495fab29
 nonce = 7c2bac1d
 ```
 
@@ -182,11 +182,11 @@ The final step before we can build our header_hex = version + previous_blocks_ha
 I pointed out the visual difference between the two representations but the real difference between the two representations is on what side of the number the highest power of the base is. As an example AB = Ax16 + B in one representation, and A + Bx16 in the other. Anyways, once the endiandness has been changed, the data looks like this:
 
 ```
-version = "01000000" \
-previous_blocks_hash = "0000000000000000000000000000000000000000000000000000000000000000" \
-merkleroot = "3ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a" \
-bits = "29ab5f49" \
-time = "ffff001d" \
+version = "01000000"
+previous_blocks_hash = "0000000000000000000000000000000000000000000000000000000000000000"
+merkleroot = "3ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a"
+bits = "29ab5f49"
+time = "ffff001d"
 nonce = "1dac2b7c"
 ```
 

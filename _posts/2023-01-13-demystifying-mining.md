@@ -17,7 +17,7 @@ The sum of data and nonce is congruent 0 modulo 17.
 
 So, If I give you 2, you can respond with 15 and 17. 32 and 34 will work also as 2 + 32 = 34, and 34 is congruent 0 modulo 17. So, for data = 2, your nonce is 32 and your hash is 34.
 
-Now, for some given data, say data = 2, a very naive way to find a nonce is to start checking if nonce = 0 meets the requirements. If not, increase nonce by 1 and check that. Continue this process until you find a nonce such that data + nonce is congruent to 0 modulo 17.
+Now, for this game, a very naive way to find a nonce is to start checking if nonce = 0 results in a hash that meets my game's expectations. If not, increase nonce by 1 and check that. Continue this process until you find a nonce such that data + nonce is congruent to 0 modulo 17.
 
 Let me write this in python:
 
@@ -35,7 +35,7 @@ The way this function is written, it will return the smallest nonnegative nonce 
 
 So, for the purposes of my game here, finding an acceptable nonce is no different than counting from 0 upwards.
 
-Let me improve here my wordchoice so that it better resembles what is usually used in bitcoin mining. Specifically, let us call the transformation combine = data + nonce "hashing".
+Let me improve here my wordchoice so that it better resembles what is usually used in Bitcoin mining. Specifically, let us call the transformation combine = data + nonce "hashing".
 
 So, the hash of data and nonce is data + nonce. Let me write a function for that:
 
@@ -123,7 +123,7 @@ mine(data, next_positive, summation_hash, is_congruent17)
 
 Now, let me go back to Bitcoin mining. It starts with some data and the miner needs to find some nonce such that the hash256 of the hash256 of data and nonce has a certain number of trailing zeroes. Right, hash of hash.
 
-Assuming that I have a bitcoin specific hasher function (bitcoin_hasher), and a bitcoin specific function to generate the next nonce (bitcoin_next_nonce), and a bitcoin specific acceptability tester function (2_trailing_zeroes), I can simply call the mine function as follows and start mining for Bitcoin:
+Assuming that I have a Bitcoin specific hasher function (bitcoin_hasher), and a Bitcoin specific function to generate the next nonce (bitcoin_next_nonce), and a Bitcoin specific acceptability tester function (2_trailing_zeroes), I can simply call the mine function as follows and start mining for Bitcoin:
 
 ```
 mine(transaction_data, bitcoin_next_nonce, bitcoin_hasher, 2_trailing_zeroes)
@@ -182,7 +182,7 @@ def bitcon_nonce_generator(x):
     return next(gen)
 
 ```
-In Bitcoin, nonce is rather seeked by counting. But to keep things simpler and, again, to remove the idea that bitcoin mining solves complex mathematical problems, and to show that mining really is as simple as counting, I will use that dummy nonce generator.
+In Bitcoin, nonce is rather seeked by counting. But to keep things simpler and, again, to remove the idea that Bitcoin mining solves complex mathematical problems, and to show that mining really is as simple as counting, I will use that dummy nonce generator.
 
 And, finally, my hash acceptability tester will be this:
 

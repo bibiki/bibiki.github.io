@@ -3,9 +3,6 @@ layout: post
 title:  "Demystifying Mining"
 ---
 
-Demystifying Mining
-===================
-
 You have heard that Bitcoin mining "solves complex mathematical problems" but that is an inaccurate description of what happens.
 Mining really is no different than counting. So, I want to show that mining is really a very simple process and remove the intimidation that "solves complex mathematical problems" may induce.
 

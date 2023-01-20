@@ -37,7 +37,7 @@ plugins:
 minima:
   social_links:
     - { platform: github,         user_url: "https://github.com/bibiki" }
-    - { platform: twitter,        user_url: "https://twitter.com/bibiki" }
+    - { platform: twitter,        user_url: "https://twitter.com/ngadhnjim" }
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

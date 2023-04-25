@@ -1,0 +1,13 @@
+<svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+<style>
+    /* Note that the color of the text is set with the    *
+     * fill property, the color property is for HTML only */
+    .big {
+      font: italic 10px serif;
+    }
+  </style>
+  <rect width="100%" height="100%" fill="none" />
+  <text x="20" y="35" class="big">1</text>
+  <!-- If you do not specify the stroke
+       color the line will not be visible -->
+</svg>

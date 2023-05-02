@@ -36,6 +36,8 @@ def square(n):
     while i < n:
         while j < n:
             rez += 1
+            j++
+        i++
     return rez
 ```
 
@@ -51,7 +53,7 @@ def square(n):
     return rez
 ```
 
-There is this nice method to quickly multiply two numbers that is refered to as Russian Peasant's Method. It is based on the idea that a\*b=(2\*a)*(b/2). If b is odd, however, b/2 is not an integer and we want to stick to using integers only. So, the method recognizes two cases: b is odd or b is even. Let's multiply 7 by 7 to illustrate the idea:
+There is this nice method to quickly multiply two numbers that is sometimes refered to as Russian Peasant's Method (but is actually found in math documents from 1650 BC). It is based on the idea that a\*b=(2\*a)*(b/2). If b is odd, however, b/2 is not an integer and we want to stick to using integers only. So, the method recognizes two cases: b is odd or b is even. Let's multiply 7 by 7 to illustrate the idea:
 
 ```
 7*7=7*6 + 7
@@ -77,3 +79,5 @@ def square(n):
     return rez
         
 ```
+
+And that's all. My intention was to show that that which solves the problem is different from the code that implements the solution. Every one of these functions calculates the square of an integer but they are all different. One way these functions differ is the number of steps performed to calculate the square of n. There is nothing faster than n\*n but this last way to square an integer n is very interesting and is faster than the other ways. The same idea is used to calculate the nth fibonaci number in a logarithmic number of steps, whereas a recursive function to calculate fibonaci numbers takes 2^n steps. That is a huge improvement in performance. To see how that is done you may consult the book Structure and Intepretation of Computer Programs, exercise 1.19.

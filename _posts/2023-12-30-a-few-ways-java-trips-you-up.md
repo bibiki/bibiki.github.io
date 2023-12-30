@@ -29,7 +29,7 @@ int remainder(int x, int y) {
 }
 ```
 
-One case when knowing this is useful is when, for example, writing the snake game using Java. Sometimes, we want perhaps to allow the snake to move through the left edge of the screen and appear back in from the right edge of the screen. To do that, we would like column -1 in an imaginary grid to be the right most column in that same grid. So, for example, if our grid has 50 columnsand the snake moves through the left edge of the screen, we would like the snake's head to appear in column 49 (which is really the 50th column if the first is column 0). Hence, we would like -1 % 50 to be 49 rather than -1.
+One case when knowing this is useful is when, for example, writing the snake game using Java. Sometimes, we want perhaps to allow the snake to move through the left edge of the screen and appear back in from the right edge of the screen. To do that, we would like column -1 in an imaginary grid to be the right most column in that same grid. So, for example, if our grid has 50 columns and the snake moves through the left edge of the screen, we would like the snake's head to appear in column 49 (which is really the 50th column if the first is column 0). Hence, we would like -1 % 50 to be 49 rather than -1.
 
 So, the modulo operator in Java simply works wrong and does not work the way it is supposed to.
 
@@ -56,7 +56,7 @@ printNumbers();
 
 So, the last invocation of the method takes no arguments. As a Java developer, I am conditioned to dread the possibility of having a NullPointerException being raised in that case but what actually happens is that the compiler replaces the no-argument invocation with an invocation that takes a zero-length array of numbers and so no NullPointerException is going to be raised.
 
-For clarity, printNumbers(); is equal to printNumbers(new int[0]{}); and printNumbers(1, 2, 3); is equal to printNumbers(new int[]{1, 2, 3});
+For clarity, printNumbers(); is equal to printNumbers(new int[]{}); and printNumbers(1, 2, 3); is equal to printNumbers(new int[]{1, 2, 3});
 
 Last I'd like to point out is this:
 
@@ -68,7 +68,7 @@ System.out.println(i);
 
 This is not the way to write code, but it is still a strange thing that once tripped me up. Perhaps I had another variable, say j, whose value I was trying to set to i++, or something like that.
 
-Anyways. It is easy to think that after those two lines of code have executedthe value of i is 2 but in actuality, the vaule of i after those two lines of code remains 1.
+Anyways. It is easy to think that after those two lines of code have executed the value of i is 2 but in actuality, the vaule of i after those two lines of code remains 1.
 
 Here is another way this pattern of writing code may trip one up. Here is some code:
 

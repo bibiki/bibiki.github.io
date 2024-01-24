@@ -59,3 +59,9 @@ minima:
 #   - vendor/ruby/
 
 google_analytics: "G-FMNZ8K769Y"
+
+# collections - to group game tutorials separately from other posts
+
+collections:
+    games:
+        output: true
